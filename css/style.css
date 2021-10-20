@@ -68,3 +68,7 @@ ul.socialBtn li a.rss {background: #ce0648;}
 ul.socialBtn [class^="icon-"]:before,ul.socialBtn [class*=" icon-"]:before {
 	margin-right: 5px;
 }
+
+.next {
+    text-align: center;
+}

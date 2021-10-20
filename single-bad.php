@@ -6,7 +6,7 @@
 $args = array(
   'post_type' => 'bad',// 投稿タイプを指定
   'orderby' => 'rand',// ランダムで表示（ここ！）
-  'posts_per_page' => 4,// 表示する記事数
+  'posts_per_page' => 3,// 表示する記事数
 );
 $post_query = new WP_Query( $args );
 if ( $post_query->have_posts() ) : 
@@ -18,6 +18,7 @@ if ( $post_query->have_posts() ) :
 
     <div class="media-body ml-3">
         <h5 class="mt-0"><?php the_title(); ?></h5>
+        <?php if(function_exists('wp_ulike')) wp_ulike('get'); ?>
         <?php the_excerpt() ?>
     </div>
 </div>
@@ -31,6 +32,8 @@ if ( $post_query->have_posts() ) :
 </section>
 
 <?php wp_reset_postdata(); ?>
+<div class="next"><?php previous_post_link('« %link »', '前へ'); ?><?php next_post_link('« %link »', '次へ'); ?></div>
+
 
 <ul class="socialBtn">
 	<li><a class="twitter icon-twitter" href="//twitter.com/intent/tweet?text=<?php echo urlencode(the_title("","",0)); ?>&<?php echo urlencode(get_permalink()); ?>&url=<?php echo urlencode(get_permalink()); ?>" target="_blank" title="Twitterでシェアする">Twitter</a></li>
