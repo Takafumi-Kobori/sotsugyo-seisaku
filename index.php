@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>ここはindex.phpです</h1>
     
 </body>
 </html>
