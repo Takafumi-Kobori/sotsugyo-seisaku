@@ -1,33 +1,23 @@
 <?php get_header(); ?>
-    <!-- スライド -->
+
+<body>
+    <!-- carousel -->
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: First slide">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#555" dy=".3em">First
-                        slide</text>
-                </svg>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/2.jpg" alt="">
             </div>
             <div class="carousel-item">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Second slide">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#666" /><text x="50%" y="50%" fill="#444" dy=".3em">Second
-                        slide</text>
-                </svg>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/5.jpg" alt="">
             </div>
             <div class="carousel-item">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Third slide">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#555" /><text x="50%" y="50%" fill="#333" dy=".3em">Third
-                        slide</text>
-                </svg>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/4.jpg" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/1.jpg" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/3.jpg" alt="">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -40,36 +30,43 @@
         </a>
     </div>
 
-    <section class="section" id="/">
-        <h2 class="headline">トップページ</h2>
-
-        <!-- ループ -->
-        <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : the_post(); ?>
-        <!-- 好事例一覧 -->
-        <div class="media col-xs-12 col-md-6 mx-auto mb-5">
-            <!-- サムネイル画像取得 -->
-            <a href="<?php the_permalink(); ?>">            <?php the_post_thumbnail(); ?></a>
-            <div class="media-body ml-3">
-                <h5 class="mt-0"><?php the_title(); ?></h5>
-                <!-- ブログ抜粋 -->
-                <?php the_excerpt(); ?>
-            </div>
-        </div>
-
-        <?php endwhile; ?><?php else : ?>
-        <!-- コンテンツがない時の表示 -->
-        <?php endif; ?>
-
-
+    <!--  explanation-->
+    <section class="section1">
+        <p>育児休業の取得や、働き方改革、リモートワークの普及等により、男性が育児に参画する機会が増えています。しかし、育児を初めて行う男性にとって、最初は戸惑うことが多いでしょう。このサイトは、男性の育児について、先輩パパ・ママのリアルな声を掲載しています。先輩たちの体験談を参考に、日々ステップアップしていきましょう。
+        </p>
     </section>
 
-    <ul class="socialBtn">
-	<li><a class="twitter icon-twitter" href="//twitter.com/intent/tweet?text=<?php echo urlencode(the_title("","",0)); ?>&<?php echo urlencode(get_permalink()); ?>&url=<?php echo urlencode(get_permalink()); ?>" target="_blank" title="Twitterでシェアする">Twitter</a></li>
-	<li><a class="facebook icon-facebook" href="//www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&t=<?php echo urlencode(the_title("","",0)); ?>" target="_blank" title="facebookでシェアする">Facebook</a></li>
-	<li><a class="line icon-line" href="//timeline.line.me/social-plugin/share?url=<?php echo urlencode(get_permalink()); ?>" target="_blank" title="LINEでシェアする">LINE</a></li>
-	<li><a class="rss icon-feed" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kodomo/kodomo_kosodate/" target="_blank" title="厚生労働省でシェアする">厚生労働省</a></li>
-</ul>
+
+    <!-- card -->
+    <section class="section2">
+        <div class="d-flex container justify-content-around">
+            <div class="card" style="width: 18rem;">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/8.jpg" alt="" bd-placeholder-img card-img-top width="100%" height="180">
+                <div class="card-body">
+                    <h5 class="card-title">Good Case</h5>
+                    <p class="card-text">パパ育の「良い事例」を掲載しています。ぜひ実践してみましょう！</p>
+                    <a href="good" class="btn btn-primary">見てみよう</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/7.jpg" alt="" bd-placeholder-img card-img-top width="100%" height="180">
+                <div class="card-body">
+                    <h5 class="card-title">Bad Case</h5>
+                    <p class="card-text">パパが犯した「失敗事例」を掲載しています。あなたは同じ過ちを防げるか？</p>
+                    <a href="#" class="btn btn-primary">見てみよう</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/9.jpg" alt="" bd-placeholder-img card-img-top width="100%" height="180">
+                <div class="card-body">
+                    <h5 class="card-title">Post</h5>
+                    <p class="card-text">あなたの経験も、きっと誰かの役に立つはず。ぜひ、投稿してみましょう！</p>
+                    <a href="forums/forum/投稿/" class="btn btn-primary">書いてみよう</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
 
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>
